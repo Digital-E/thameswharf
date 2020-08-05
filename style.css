@@ -23,18 +23,18 @@ body {
 }
 
 .center-block > div:nth-child(2) {
-  width: 50%;
+  width: 30%;
   margin-top: 0;
 }
 
 @media (min-width: 992px) {
   .center-block > div:nth-child(1) {
-    width: 70%;
+    width: 75%;
   }
 
   .center-block > div:nth-child(2) {
-    width: 30%;
-    margin-top: 40px;
+    width: 20%;
+    margin-top: 20px;
   }
 }
 
@@ -53,10 +53,13 @@ body {
 
 .mobile-download {
   position: absolute;
+  display: flex;
   height: 30px;
   bottom: 25%;
   left: 50%;
   transform: translate(-50%, 0);
+  flex-direction: column;
+  align-items: center;
 }
 
 .mobile-download > div {
@@ -75,21 +78,48 @@ body {
   }
 }
 
+.mobile-download a {
+  display: block;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-download a:last-child {
+  margin-top: 15px;
+}
+
+@media (max-width: 992px) {
+  .bottom-bar {
+    padding: 30px;
+  }
+}
+
 .bottom-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100vw;
   display: flex;
-  height: 90px;
+  height: 40px;
   justify-content: space-between;
-  padding: 30px;
+  align-items: center;
+  bottom: 50px;
+  /* padding: 60px; */
   box-sizing: border-box;
 }
 
 .bottom-bar > div {
   width: auto;
   height: 100%;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .bottom-bar > div {
+    padding: 0 60px;
+  }
 }
 
 .bottom-bar img {
@@ -97,8 +127,27 @@ body {
   width: auto;
 }
 
-@media (max-width: 992px) {
+.desktop-download {
+  display: none;
+}
+
+@media (min-width: 992px) {
   .desktop-download {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
+}
+
+.desktop-download a {
+  display: block;
+  height: 15px;
+}
+
+.desktop-download a:last-child {
+  margin-top: 15px;
 }
